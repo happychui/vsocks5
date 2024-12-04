@@ -16,7 +16,7 @@ import (
 
 	"github.com/456vv/vconn"
 	"github.com/456vv/vconnpool/v2"
-	"github.com/456vv/vsocks5"
+	"github.com/happychui/vsocks5"
 	"golang.org/x/crypto/ssh"
 )
 
@@ -30,6 +30,7 @@ var (
 )
 
 func main() {
+	vsocks5.GlobalKey = "1234567890123456"
 	flag.Parse()
 	if flag.NFlag() == 0 {
 		flag.PrintDefaults()

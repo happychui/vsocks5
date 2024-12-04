@@ -24,6 +24,22 @@ func NewNegotiateMethodRequest(methods []byte) *NegotiationRequest {
 }
 
 // server
+// key
+//
+//	+------+
+//	| KEY  |
+//	+------+
+//	| 16   |
+//	+------+
+func NewNegotiateKeyRequest(r io.Reader) (string, error) {
+	bb := make([]byte, 16)
+	if _, err := io.ReadFull(r, bb); err != nil {
+		return "", err
+	}
+	return string(bb), nil
+}
+
+// server
 //
 //	+----+----------+----------+
 //	|VER | NMETHODS | METHODS  |

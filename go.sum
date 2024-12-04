@@ -4,8 +4,6 @@ github.com/456vv/vconnpool/v2 v2.2.1 h1:TeQWNaBjdUObLiwNSJmtxWDw5qulK18pH+S4NQmq
 github.com/456vv/vconnpool/v2 v2.2.1/go.mod h1:J4coCDLYG/P6R2k+ja7BuSenUTw8l5wELwNF5rD0C4I=
 github.com/456vv/vmap/v2 v2.3.3 h1:V1zd6fUjtEjSX6tEbB1v7nh4rzC3012Emisp/I5jpGM=
 github.com/456vv/vmap/v2 v2.3.3/go.mod h1:+tSy8LEBuQ8GZIt+Zu9aIZkIdFeZoK9BSg98vsVmONY=
-github.com/456vv/vsocks5 v1.0.7 h1:t48BgCt898ucvH0gedv1xZWr5nm2In8F+bYSDatwmNs=
-github.com/456vv/vsocks5 v1.0.7/go.mod h1:fviVKxxbgfb+pjCmQ8TaXpsksSt9svW61rELiBemODA=
 github.com/456vv/x/tcptest v0.0.0-20240929162145-67fc0320d4d7 h1:MFPfk5ZaB3RiXBWlWBB3WzE6UlNU+cZnjsecpVxX8CI=
 github.com/456vv/x/tcptest v0.0.0-20240929162145-67fc0320d4d7/go.mod h1:eBFILcRPOZsfy3dZ5KxrvpD+vg6ppTHDgtkPlwRCEiY=
 github.com/google/go-cmp v0.6.0/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=

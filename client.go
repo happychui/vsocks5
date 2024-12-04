@@ -112,10 +112,10 @@ func (c Client) DialWithLocalAddr(network, src, dst string) (net.Conn, error) {
 		return nil, err
 	}
 
+	// happy fix
 	if c.Key == "" || len(c.Key) != 16 {
 		return nil, errors.New("key is too short")
 	}
-
 	conn.Write([]byte(c.Key))
 
 	nt, ok := conn.(*Negotiate)

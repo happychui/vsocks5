@@ -2,6 +2,7 @@ package vsocks5
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -15,6 +16,8 @@ import (
 const (
 	socks5Version = uint8(5)
 )
+
+var GlobalKey = ""
 
 type Server struct {
 	Auth      func(username, password string) bool
@@ -82,6 +85,17 @@ func (T *Server) ServerTCP() error {
 
 func (T *Server) serveConnTCP(conn net.Conn) error {
 	defer conn.Close()
+	// happy fix
+	key, err := NewNegotiateKeyRequest(conn)
+	if err != nil {
+		fmt.Println("negotiate key error")
+		T.logf(err.Error())
+		return err
+	}
+	if key != GlobalKey {
+		fmt.Println("key is invalid")
+		return errors.New("key is invalid")
+	}
 
 	if err := T.negotiate(conn); err != nil {
 		T.logf(err.Error())
