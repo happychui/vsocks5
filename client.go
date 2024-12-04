@@ -78,6 +78,7 @@ type Client struct {
 	Server   string
 	Username string
 	Password string
+	Key      string
 	DialTCP  func(network string, laddr, raddr *net.TCPAddr) (net.Conn, error)
 }
 
@@ -110,6 +111,12 @@ func (c Client) DialWithLocalAddr(network, src, dst string) (net.Conn, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	if c.Key == "" || len(c.Key) != 16 {
+		return nil, errors.New("key is too short")
+	}
+
+	conn.Write([]byte(c.Key))
 
 	nt, ok := conn.(*Negotiate)
 	if !ok || !nt.done {
